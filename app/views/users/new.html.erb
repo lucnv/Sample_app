@@ -1,32 +1,23 @@
 <% provide(:title, "Sign up") %>
 <h1>Sign up</h1>
 <div class="row">
-	<div class="col-md-6 col-md-offset-3">
-	<form method="POST" name="sign_up_form">
-	<table cellspacing="0px" algin="center" with="600">
-		<tr height="50">
-			<td with="200">Username</td>
-			<td with="400"><input type="text" name="txtUsername" value="" size="30"/></td>
-		</tr>
-		<tr height="50">
-			<td>Email</td>
-			<td><input type="email" name="txtEmail" value=""size="30"/></td>
-		</tr>
-		<tr height="50">
-			<td>Password</td>
-			<td><input type="password" name="txtPassword" value=""size="30"/></td>
-		</tr>
-		<tr height="50">
-			<td>Confirm Password</td>
-			<td><input type="password" name="txtCfPassword" value=""size="30"/></td>
-		</tr>
-		<tr height="50">
-			<td colspan="2" align="center">
-				<input type="button" name="btnSignup" value="	Sign up		"/>
-			</td>
-		</tr>
-	</table>
-	</form>
-</diV>
-</div>
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
