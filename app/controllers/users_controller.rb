@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])	
+    begin
+      @user = User.find(params[:id])  
+    rescue Exception => e
+      @user = nil
+    end
   end
 
   def create
