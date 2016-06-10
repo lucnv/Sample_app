@@ -6,6 +6,7 @@
       	<% if @user %>
           <%= gravatar_for @user %>
           <%= @user.name %>
+          <%= @user.email %>
         <% else %>
        	  This user does not exist
         <% end %>
