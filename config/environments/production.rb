@@ -78,5 +78,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.force_ssl = true
-
+  
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'nguyenluc-sample-app.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
 end
