@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		#handle a successfull sign up
-      @user.send_activation_email
+      # @user.send_activation_email
       message = "Please check your email to activate your account!"
       message += "\n" + edit_account_activation_url(@user.activation_token,
                                                     email: @user.email)
